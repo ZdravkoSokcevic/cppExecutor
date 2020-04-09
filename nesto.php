@@ -1,9 +1,8 @@
 <?php
     #file to compile
+    require __DIR__.'/vendor/autoload.php';
+    require 'src/File.php';
 
-    require 'File.php';
-
-   
 
    $FILE_PATH= 'nes.cpp';
    $output_file='nesto';
@@ -12,14 +11,13 @@
 
     $exec_command= $buff[0].' -o '.$output_file.' '.$FILE_PATH;
 
-    $file=new File('nes.cpp','nesto');
+    $file=new File('');
     $file->execute();
-    var_dump($file->getOutput());
+    var_dump($file->getOutput());die();
     // var_dump($exec_command) or die();
     // exec($exec_command,$out);
     // exec('./'.$output_file,$out);
     // print_r($out);
     // die();
-    var_dump('out')or die();
 
 ?>
